@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class TasksComponent extends Component {
     render() {
@@ -9,7 +10,8 @@ class TasksComponent extends Component {
 
         return tasks.map(({_id, name, description}) => (
             <div key={_id}>
-                <p>{`${name}: ${description}`}</p>
+                <Link className="nav-link" to={`/${_id}`}>{name}</Link>
+                <p>{description}</p>
             </div>
         ));
     }
