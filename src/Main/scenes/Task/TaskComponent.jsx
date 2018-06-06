@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import { genericProps, taskProps } from '../common/propTypes';
+import { genericProps, taskProps } from '../../../common/propTypes';
 
 class TaskComponent extends Component {
     render() {
-        const { data: { task }, loading, error } = this.props;
-
-        if (loading) return <p>Loading...</p>;
-        if (error) return <p>Error :(</p>;
-
+        const { data: { task } } = this.props;
         return (
             <div>
                 {task && <p>{`${task.name}: ${task.description}`}</p>}

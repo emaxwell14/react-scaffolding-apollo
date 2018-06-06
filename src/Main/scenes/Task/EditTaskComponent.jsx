@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { updateTaskProps, genericProps } from '../common/propTypes';
+import { updateTaskProps, genericProps } from '../../../common/propTypes';
 
 let input;
 class EditTaskComponent extends Component {
     render() {
-        const { updateTask, loading, error, match: { params: { taskId } } } = this.props;
-
-        if (loading) return <p>Loading...</p>;
-        if (error) return <p>Error :(</p>;
-
+        const { updateTask, match: { params: { taskId } } } = this.props;
         return (
             <form
                 onSubmit={(e) => {
@@ -31,4 +27,5 @@ class EditTaskComponent extends Component {
 EditTaskComponent.propTypes = {
     ...genericProps,
     ...updateTaskProps,
-};export default EditTaskComponent;
+};
+export default EditTaskComponent;

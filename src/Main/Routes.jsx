@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Route } from 'react-router-dom';
-import Task from './components/Task';
-import Tasks from './components/Tasks';
+import Task from './scenes/Task/Task';
+import Tasks from './scenes/Task/Tasks';
 
 const Routes = () => (
     <Fragment>

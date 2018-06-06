@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const proxy = require('http-proxy-middleware');
-const config = require('./webpack.dev.js');
+const config = require('./webpack/webpack.dev.js');
 const helmet = require('helmet');
 const path = require('path');
 
