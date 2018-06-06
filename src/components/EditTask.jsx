@@ -1,6 +1,6 @@
 import EditTaskComponent from './EditTaskComponent';
 import TaskMutation from '../graphQL/Task/TaskMutation.graphql';
-import withLoader from './withLoader';
+import composeWithLoaderAndError from './composeWithLoaderAndError';
 
-export default withLoader(TaskMutation)(EditTaskComponent);
+export default composeWithLoaderAndError(TaskMutation)(EditTaskComponent);
 

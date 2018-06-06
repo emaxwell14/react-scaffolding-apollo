@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="36bac381-81b1-4ce8-930a-6fdc84eb2cb5" name="null" comment="null" />
-    <list default="true" id="06ef3d0a-3669-47fb-9546-1f992a0dbb87" name="Default" comment="Extracting composed loader to HOC">
-      <change afterPath="$PROJECT_DIR$/src/components/withLoader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="06ef3d0a-3669-47fb-9546-1f992a0dbb87" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Error.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/EditTask.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditTask.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Task.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Task.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Tasks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tasks.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/withLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/composeWithLoaderAndError.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,20 +48,32 @@
       <file leaf-file-name="Tasks.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Tasks.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="60" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
+            <state relative-caret-position="68">
+              <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+              <folding>
+                <element signature="e#1#47#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="withLoader.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/withLoader.js">
+      <file leaf-file-name="composeWithLoaderAndError.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/composeWithLoaderAndError.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="255">
+              <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Error.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Error.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -151,8 +163,9 @@
         <option value="$PROJECT_DIR$/src/components/TasksComponent.jsx" />
         <option value="$PROJECT_DIR$/src/components/Loader.jsx" />
         <option value="$PROJECT_DIR$/src/components/Task.jsx" />
-        <option value="$PROJECT_DIR$/src/components/withLoader.js" />
         <option value="$PROJECT_DIR$/src/components/EditTask.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Error.jsx" />
+        <option value="$PROJECT_DIR$/src/components/withLoader.js" />
         <option value="$PROJECT_DIR$/src/components/Tasks.jsx" />
       </list>
     </option>
@@ -250,9 +263,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\emaxwell\Documents\dev\PERSO\react-scaffolding-apollo\src\components" />
       <recent name="C:\Users\emaxwell\Documents\dev\PERSO\react-scaffolding-apollo" />
       <recent name="C:\Users\emaxwell\Documents\dev\PERSO\react-scaffolding-apollo\src" />
-      <recent name="C:\Users\emaxwell\Documents\dev\PERSO\react-scaffolding-apollo\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\emaxwell\Documents\dev\PERSO\react-scaffolding-apollo" />
@@ -380,11 +393,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528285299158</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Extracting composed loader to HOC">
+      <created>1528285848270</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1528285848270</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23308000" />
+    <option name="totallyTimeSpent" value="23554000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -403,14 +423,14 @@
       <window_info id="UI Designer" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.32897604" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32897604" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.47603485" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.39215687" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.29302832" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20788912" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.29302832" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20788912" />
       <window_info anchor="bottom" id="SonarLint" order="9" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -475,13 +495,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/react-apollo/graphql.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -829,16 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/withLoader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/EditTask.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -849,10 +852,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Error.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/composeWithLoaderAndError.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Tasks.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="60" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
+        <state relative-caret-position="68">
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+          <folding>
+            <element signature="e#1#47#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

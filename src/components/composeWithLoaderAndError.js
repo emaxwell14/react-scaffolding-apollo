@@ -1,6 +1,7 @@
 import { branch, compose, renderComponent } from 'recompose';
 import { graphql } from 'react-apollo/index';
 import Loader from './Loader';
+import Error from './Error';
 
 const renderWhileLoading = (component = Loader, propName = 'data') =>
     branch(
@@ -8,8 +9,15 @@ const renderWhileLoading = (component = Loader, propName = 'data') =>
         renderComponent(component),
     );
 
+const renderForError = (component = Error, propName = 'data') =>
+    branch(
+        props => props[propName] && props[propName].error,
+        renderComponent(component),
+    );
+
 export default (query, options) => compose(
     graphql(query, options),
     renderWhileLoading(),
+    renderForError(),
 );
 

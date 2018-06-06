@@ -1,5 +1,5 @@
 import TasksComponent from './TasksComponent';
 import TasksQuery from '../graphQL/Task/TasksQuery.graphql';
-import withLoader from './withLoader';
+import composeWithLoaderAndError from './composeWithLoaderAndError';
 
-export default withLoader(TasksQuery)(TasksComponent);
+export default composeWithLoaderAndError(TasksQuery)(TasksComponent);

@@ -1,8 +1,8 @@
 import TaskComponent from './TaskComponent';
 import TaskQuery from '../graphQL/Task/TaskQuery.graphql';
-import withLoader from './withLoader';
+import composeWithLoaderAndError from './composeWithLoaderAndError';
 
-export default withLoader(TaskQuery,
+export default composeWithLoaderAndError(TaskQuery,
     {
         options: ({ match: { params: { taskId } } }) => ({ variables: { taskId } }), // Pass params into the query
     },
