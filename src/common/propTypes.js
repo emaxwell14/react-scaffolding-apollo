@@ -7,6 +7,7 @@ const genericProps = shape({
 });
 
 const taskProps = shape({
+    _id: string.isRequired,
     name: string.isRequired,
     description: string,
     createdDate: object.isRequired,
