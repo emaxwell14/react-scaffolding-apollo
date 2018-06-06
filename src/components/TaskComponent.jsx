@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import { genericProps, taskProps } from '../common/propTypes';
 
 class TaskComponent extends Component {
     render() {
@@ -7,12 +8,18 @@ class TaskComponent extends Component {
         if (loading) return <p>Loading...</p>;
         if (error) return <p>Error :(</p>;
 
-        return  (
+        return (
             <div>
                 {task && <p>{`${task.name}: ${task.description}`}</p>}
             </div>
         );
     }
 }
+
+
+TaskComponent.propTypes = {
+    ...genericProps,
+    ...taskProps,
+};
 
 export default TaskComponent;

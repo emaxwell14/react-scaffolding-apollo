@@ -1,5 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import { updateTaskProps, genericProps } from '../common/propTypes';
 
+let input;
 class EditTaskComponent extends Component {
     render() {
         const { updateTask, loading, error, match: { params: { taskId } } } = this.props;
@@ -7,16 +9,16 @@ class EditTaskComponent extends Component {
         if (loading) return <p>Loading...</p>;
         if (error) return <p>Error :(</p>;
 
-        return  (
+        return (
             <form
-                onSubmit={e => {
+                onSubmit={(e) => {
                     e.preventDefault();
                     updateTask({ _id: taskId, todo: { name: input.value } });
                     // input.value = "";
                 }}
             >
                 <input
-                    ref={node => {
+                    ref={(node) => {
                         input = node;
                     }}
                 />
@@ -26,4 +28,7 @@ class EditTaskComponent extends Component {
     }
 }
 
-export default EditTaskComponent;
+EditTaskComponent.propTypes = {
+    ...genericProps,
+    ...updateTaskProps,
+};export default EditTaskComponent;
