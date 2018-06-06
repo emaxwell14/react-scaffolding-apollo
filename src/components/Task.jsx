@@ -3,7 +3,7 @@ import gql from "graphql-tag";
 import TaskComponent from "./TaskComponent";
 
 const data = gql`
-       query MatchSummary($taskId: String!){
+       query TaskQuery($taskId: String!){
         task(_id: $taskId){
           _id
           name
@@ -16,5 +16,5 @@ const data = gql`
 
 export default graphql(data,
     {
-        options: ({ match: { params: { taskId } }}) => ({ variables: { taskId }}), // Pass url param into the query
+        options: ({ match: { params: { taskId } }}) => ({ variables: { taskId }}), // Pass params into the query
     })(TaskComponent);
