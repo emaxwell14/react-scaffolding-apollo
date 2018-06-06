@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
     entry: {
-        app: ['./src/index.js'],
+        app: ['./src/index.jsx'],
         vendor: [
             'lodash', 'react', 'react-dom', 'react-router', 'prop-types', 'react-router-dom',
             // 'bootstrap/dist/css/bootstrap.css', 'bootstrap', 'font-awesome/css/font-awesome.css',
