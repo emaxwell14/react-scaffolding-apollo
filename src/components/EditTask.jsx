@@ -1,7 +1,6 @@
-import { graphql } from 'react-apollo';
 import EditTaskComponent from './EditTaskComponent';
 import TaskMutation from '../graphQL/Task/TaskMutation.graphql';
+import withLoader from './withLoader';
 
-// TODO pass type
+export default withLoader(TaskMutation)(EditTaskComponent);
 
-export default graphql(TaskMutation)(EditTaskComponent);
