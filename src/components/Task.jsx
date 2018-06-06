@@ -1,20 +1,8 @@
 import { graphql } from "react-apollo";
-import gql from "graphql-tag";
 import TaskComponent from "./TaskComponent";
+import TaskQuery from '../graphQL/Task/TaskQuery.graphql'
 
-const data = gql`
-       query TaskQuery($taskId: String!){
-        task(_id: $taskId){
-          _id
-          name
-          description
-          createdDate
-          status
-        }
-      }
-`;
-
-export default graphql(data,
+export default graphql(TaskQuery,
     {
         options: ({ match: { params: { taskId } }}) => ({ variables: { taskId }}), // Pass params into the query
     })(TaskComponent);

@@ -1,0 +1,9 @@
+query TaskQuery($taskId: String!){
+    task(_id: $taskId){
+        _id
+        name
+        description
+        createdDate
+        status
+    }
+}

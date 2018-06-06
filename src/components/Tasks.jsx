@@ -1,15 +1,5 @@
 import { graphql } from "react-apollo";
-import gql from "graphql-tag";
 import TasksComponent from "./TasksComponent";
+import TasksQuery from '../graphQL/Task/TasksQuery.graphql'
 
-const data = gql`
-       query {
-        tasks{
-          _id
-          name
-          description
-        }
-      }
-`;
-
-export default graphql(data)(TasksComponent);
+export default graphql(TasksQuery)(TasksComponent);
