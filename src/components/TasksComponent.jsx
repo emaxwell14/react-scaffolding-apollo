@@ -4,9 +4,7 @@ import { genericProps, tasksProps } from '../common/propTypes';
 
 class TasksComponent extends Component {
     render() {
-        const { data: { tasks, loading, error } } = this.props;
-        console.log('PROPS', this.props);
-        if (loading) return <p>Loading...</p>;
+        const { data: { tasks, error } } = this.props;
         if (error) return <p>Error :(</p>;
 
         return tasks.map(({ _id, name, description }) => (
