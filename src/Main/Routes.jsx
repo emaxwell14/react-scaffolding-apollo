@@ -7,8 +7,8 @@ import EditTask from './scenes/Task/EditTask';
 const Routes = () => (
     <Fragment>
         <Route path="/" component={Tasks} exact />
-        <Route path="/:taskId" component={Task} />
-        <Route path="/update/:taskId" component={EditTask} />
+        <Route path="/view/:taskId" component={Task} />
+        <Route path="/update/:taskId?" component={EditTask} />
     </Fragment>
 );
 

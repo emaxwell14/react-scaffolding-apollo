@@ -9,7 +9,7 @@ const TaskList = tasks => (<ul>{tasks}</ul>);
 const TaskListItem = ({ _id, name, description }) => (
     <Card key={_id}>
         <CardBody>
-            <CardTitle><Link className="nav-link" to={`/update/${_id}`}>{name}</Link></CardTitle>
+            <CardTitle><Link className="nav-link" to={`/view/${_id}`}>{name}</Link></CardTitle>
             <CardText>{description}</CardText>
         </CardBody>
     </Card>
@@ -20,7 +20,7 @@ class TasksComponent extends Component {
         const { data: { tasks } } = this.props;
         return (
             <Fragment>
-                <Button><Link className="nav-link" to="/update/:taskId">Edit</Link></Button>
+                <Button color="warning"><Link to="/update/">Add</Link></Button>
                 {compose(
                     TaskList,
                     map(TaskListItem),

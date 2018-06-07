@@ -34,6 +34,15 @@
       "components": [ "Link" ],
       "specialLink": [ "to" ]
     }],
-    "react/prop-types": 0 // Centrailized proptypes, so will use console to see prop errors
+    "react/prop-types": 0, // Centrailized proptypes, so will use console to see prop errors
+    "no-underscore-dangle": [
+      2,
+      {
+        "allow": [
+          "_id"
+        ],
+        "allowAfterThis": true
+      }
+    ]
   }
 }
