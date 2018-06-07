@@ -1,4 +1,4 @@
 src/index.jsx
 server.js
-webpack
+webpack.*.js
 registerServiceWorker.js

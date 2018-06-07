@@ -8,7 +8,7 @@ class TaskComponent extends Component {
         const { data: { task } } = this.props;
         return (
             <div>
-                <Button><Link to={`/update/${task._id}`}>Edit</Link></Button>
+                <Link to={`/update/${task._id}`}><Button color="success">Edit</Button></Link>
                 {task && <p>{`${task.name}: ${task.description}`}</p>}
             </div>
         );

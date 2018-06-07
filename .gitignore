@@ -4,6 +4,7 @@
 /node_modules
 .idea
 .cache-loader
+/dist
 
 # testing
 /coverage

@@ -20,7 +20,7 @@ class TasksComponent extends Component {
         const { data: { tasks } } = this.props;
         return (
             <Fragment>
-                <Button color="warning"><Link to="/update/">Add</Link></Button>
+                <Link to="/update/"><Button color="success">Add</Button></Link>
                 {compose(
                     TaskList,
                     map(TaskListItem),

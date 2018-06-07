@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
 import { updateTaskProps, genericProps } from '../../../common/propTypes';
 
 let input;
@@ -18,7 +19,7 @@ class EditTaskComponent extends Component {
                         input = node;
                     }}
                 />
-                <button type="submit">Update Task</button>
+                <Button color="success" type="submit">Update Task</Button>
             </form>
         );
     }
