@@ -4,13 +4,13 @@ import { updateTaskProps, genericProps } from '../../../common/propTypes';
 let input;
 class EditTaskComponent extends Component {
     render() {
-        const { updateTask, match: { params: { taskId } } } = this.props;
+        const { mutate, match: { params: { taskId } } } = this.props;
         return (
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    updateTask({ _id: taskId, todo: { name: input.value } });
-                    // input.value = "";
+                    mutate({ variables: { taskId, name: input.value } });
+                    input.value = '';
                 }}
             >
                 <input
