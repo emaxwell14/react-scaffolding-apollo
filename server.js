@@ -5,7 +5,6 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const proxy = require('http-proxy-middleware');
-const fallback = require('express-history-api-fallback');
 const helmet = require('helmet');
 const path = require('path');
 const config = require('./webpack.dev.js');
@@ -36,10 +35,6 @@ app.use('*', proxy('/app', {
         '^/app': '/',
     },
 }));
-
-// Fallback on refresh. Using file on harddrive
-app.use(express.static(__dirname));
-app.use(fallback('dist/index.html', { root: __dirname }));
 
 // Serve the files on port 80.
 app.listen(PORT, () => {

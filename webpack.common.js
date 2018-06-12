@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
@@ -101,13 +100,10 @@ module.exports = {
         new CleanWebpackPlugin(['dist']), // Cleans dist dir. Removes as using HTML plugin
         new HtmlWebpackPlugin({ // Creates index.html in dist drive
             inject: true,
-            // filename: 'src/index.html',
             template: 'src/index.html', // Used to set name of div to attach react base
             title: 'Apollo Task List',
-            alwaysWriteToDisk: true, // For history fallback
             // chunks: ['vendor', 'app'],
         }),
-        new HtmlWebpackHarddiskPlugin(),
         new webpack.HashedModuleIdsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
         new webpack.optimize.CommonsChunkPlugin({ name: 'manifest' }),
