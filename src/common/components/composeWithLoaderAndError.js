@@ -15,9 +15,13 @@ const renderForError = (component = Error, propName = 'data') =>
         renderComponent(component),
     );
 
-export default (query, options) => compose(
-    graphql(query, options),
-    renderWhileLoading(),
-    renderForError(),
-);
+export default (queries, options) => {
+    const methods = (queries instanceof Array)
+        ? queries.map(query => graphql(query, options))
+        : [graphql(queries, options)];
+
+    methods.push(renderWhileLoading())
+    methods.push(renderForError())
+    return compose(...methods);
+};
 

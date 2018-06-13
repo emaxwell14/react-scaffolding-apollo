@@ -4,9 +4,10 @@
   "private": true,
   "dependencies": {
     "apollo-boost": "0.1.4",
+    "autobind-decorator": "2.1.0",
+    "babel-plugin-graphql-tag": "1.6.0",
     "bootstrap": "4.1.1",
     "graphql": "0.13.2",
-    "graphql-tag": "2.8.0",
     "helmet": "^3.5.0",
     "history": "4.7.2",
     "http-proxy-middleware": "0.17.4",
