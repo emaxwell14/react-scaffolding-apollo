@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
-import { Button, Input } from 'reactstrap';
+import { Button, Input, FormGroup, Label } from 'reactstrap';
 import autobind from 'autobind-decorator';
 import { updateTaskProps, genericProps } from '../../../common/propTypes';
+
+const RenderField = props => (
+    <FormGroup>
+        <Label for={props.name}>{props.name}</Label>
+        <Input
+            {...props}
+        />
+    </FormGroup>
+);
 
 class EditTaskComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        // Init state for form values
+        this.state = { ...props.data.task };
     }
 
     @autobind
@@ -25,12 +35,12 @@ class EditTaskComponent extends Component {
                     push(`/view/${task._id}`);
                 }}
             >
-                <Input
+                <RenderField
                     name="name"
                     value={name}
                     onChange={this.setValue}
                 />
-                <Input
+                <RenderField
                     name="description"
                     value={description}
                     onChange={this.setValue}
