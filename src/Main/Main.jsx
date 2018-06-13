@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import logo from './logo.svg';
+import { Button } from 'reactstrap';
+import autobind from 'autobind-decorator';
 import './style.css';
 import Routes from './Routes';
 
 class Main extends Component {
+    @autobind
+    redirectToView() {
+        const { history: { push } } = this.props;
+        push('/');
+    }
+
     render() {
         return (
             <div className="App">
                 <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Welcome to React</h1>
+                    <Button color="success" type="submit" onClick={this.redirectToView}>Home</Button>
                 </header>
                 <Route component={Routes} />
             </div>

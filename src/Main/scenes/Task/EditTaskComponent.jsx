@@ -7,18 +7,17 @@ let input;
 class EditTaskComponent extends Component {
     @autobind
     redirectToView() {
-        const { history: { push }, match: { params: { taskId } } } = this.props;
-        push(`/view/${taskId}`);
+        const { history: { push }, data: { task } } = this.props;
+        push(`/view/${task._id}`);
     }
 
     render() {
-        console.log('&&&&&&&&&&& PROPS', this.props);
-        const { mutate, match: { params: { taskId } } } = this.props;
+        const { mutate, data: { task } } = this.props;
         return (
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    mutate({ variables: { taskId, name: input.value } });
+                    mutate({ variables: { taskId: task._id, name: input.value } });
                     input.value = '';
                 }}
             >
