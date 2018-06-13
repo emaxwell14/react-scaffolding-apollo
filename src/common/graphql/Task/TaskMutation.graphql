@@ -1,9 +1,9 @@
-mutation updateTask($taskId: String, $name: String) {
-    updateTask(_id: $taskId, task: { name: $name }) {
-        _id
-        name
-        description
-        createdDate
-        status
-    }
-}
+mutation updateTask($taskId: String, $name: String, $description: String) {
+     updateTask(_id: $taskId, task: { name: $name, description: $description }) {
+         _id
+         name
+         description
+         createdDate
+         status
+     }
+ }

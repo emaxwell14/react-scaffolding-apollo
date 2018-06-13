@@ -1,32 +1,41 @@
 import React, { Component } from 'react';
-import { Button } from 'reactstrap';
+import { Button, Input } from 'reactstrap';
 import autobind from 'autobind-decorator';
 import { updateTaskProps, genericProps } from '../../../common/propTypes';
 
-let input;
 class EditTaskComponent extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
+
     @autobind
-    redirectToView() {
-        const { history: { push }, data: { task } } = this.props;
-        push(`/view/${task._id}`);
+    setValue(e) {
+        this.setState({ [e.target.name]: e.target.value });
     }
 
     render() {
-        const { mutate, data: { task } } = this.props;
+        const { mutate, history: { push }, data: { task } } = this.props;
+        const { name, description } = this.state;
         return (
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    mutate({ variables: { taskId: task._id, name: input.value } });
-                    input.value = '';
+                    mutate({ variables: { taskId: task._id, name, description } });
+                    push(`/view/${task._id}`);
                 }}
             >
-                <input
-                    ref={(node) => {
-                        input = node;
-                    }}
+                <Input
+                    name="name"
+                    value={name}
+                    onChange={this.setValue}
                 />
-                <Button color="success" type="submit" onClick={this.redirectToView}>Update Task</Button>
+                <Input
+                    name="description"
+                    value={description}
+                    onChange={this.setValue}
+                />
+                <Button color="success" type="submit">Update Task</Button>
             </form>
         );
     }
