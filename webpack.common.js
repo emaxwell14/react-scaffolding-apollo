@@ -11,7 +11,9 @@ module.exports = {
         vendor: [
             'lodash', 'react', 'react-dom', 'react-router', 'prop-types', 'react-router-dom',
             'bootstrap/dist/css/bootstrap.css', 'bootstrap', 'reactstrap', 'jquery', 'babel-polyfill',
-            // 'autobind-decorator', 'font-awesome/css/font-awesome.css', 'history',
+            'autobind-decorator', 'history',
+            'font-awesome/css/font-awesome.css',
+            'font-awesome-animation/dist/font-awesome-animation.css',
         ],
     },
     module: {
