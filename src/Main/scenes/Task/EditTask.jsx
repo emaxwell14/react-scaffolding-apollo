@@ -3,12 +3,23 @@ import TaskQuery from '../../../common/graphql/Task/TaskQuery.graphql';
 import TaskMutation from '../../../common/graphql/Task/TaskMutation.graphql';
 import composeWithLoaderAndError from '../../../common/components/composeWithLoaderAndError';
 
-export default composeWithLoaderAndError([TaskMutation, TaskQuery],
+export default composeWithLoaderAndError([
     {
-        options: ({ match: { params: { taskId } }, history: { push } }) => ({
-            variables: { taskId }, // Pass params into the query
-            onCompleted: ({ updateTask: { _id } }) => push(`/view/${_id}`), // Redirect to view on mutate
-        }),
-        skip: ({ match: { params: { taskId } } }) => !taskId, // Only call initial query if editing
-    })(EditTaskComponent);
+        query: TaskQuery,
+        options: {
+            options: ({ match: { params: { taskId } } }) => ({
+                variables: { taskId }, // Pass params into the query
+            }),
+            skip: ({ match: { params: { taskId } } }) => !taskId, // Only call initial query if editing
+        },
+    },
+    {
+        query: TaskMutation,
+        options: {
+            options: ({ history: { push } }) => ({
+                onCompleted: ({ updateTask: { _id } }) => push(`/view/${_id}`), // Redirect to view on mutate
+            }),
+        },
+    },
+])(EditTaskComponent);
 
