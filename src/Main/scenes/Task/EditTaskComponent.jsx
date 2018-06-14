@@ -15,8 +15,13 @@ const RenderField = props => (
 class EditTaskComponent extends Component {
     constructor(props) {
         super(props);
+
         // Init state for form values
-        this.state = { ...props.data.task };
+        if (props.data) {
+            this.state = { ...props.data.task };
+        } else {
+            this.state = {};
+        }
     }
 
     @autobind
@@ -24,17 +29,18 @@ class EditTaskComponent extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
+    @autobind
+    formSubmit(e) {
+        const { mutate, match: { params: { taskId } } } = this.props;
+        const { name, description } = this.state;
+        e.preventDefault();
+        mutate({ variables: { taskId, name, description } });
+    }
+
     render() {
-        const { mutate, history: { push }, data: { task } } = this.props;
         const { name, description } = this.state;
         return (
-            <form
-                onSubmit={(e) => {
-                    e.preventDefault();
-                    mutate({ variables: { taskId: task._id, name, description } });
-                    push(`/view/${task._id}`);
-                }}
-            >
+            <form onSubmit={this.formSubmit}>
                 <RenderField
                     name="name"
                     value={name}
