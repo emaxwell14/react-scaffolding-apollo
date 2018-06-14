@@ -4,12 +4,12 @@ import { map, compose } from 'ramda';
 import { Button, Card, CardBody, CardTitle, CardText } from 'reactstrap';
 import { genericProps, tasksProps } from '../../../common/propTypes';
 
-const TaskList = tasks => (<ul>{tasks}</ul>);
+const TaskList = tasks => <div className="mt-3">{tasks}</div>;
 
 const TaskListItem = ({ _id, name, description }) => (
     <Card key={_id}>
         <CardBody>
-            <CardTitle><Link className="nav-link" to={`/view/${_id}`}>{name}</Link></CardTitle>
+            <CardTitle><Link to={`/view/${_id}`}>{name}</Link></CardTitle>
             <CardText>{description}</CardText>
         </CardBody>
     </Card>

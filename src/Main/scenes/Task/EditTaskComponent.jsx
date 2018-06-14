@@ -45,7 +45,7 @@ class EditTaskComponent extends Component {
                     value={description}
                     onChange={this.setValue}
                 />
-                <Button color="success" type="submit">Update Task</Button>
+                <Button color="success" type="submit">Save</Button>
             </form>
         );
     }

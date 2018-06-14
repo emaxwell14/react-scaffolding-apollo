@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import autobind from 'autobind-decorator';
-import './style.css';
 import Routes from './Routes';
 
 class Main extends Component {
@@ -15,7 +14,7 @@ class Main extends Component {
     render() {
         return (
             <div className="App">
-                <header className="App-header">
+                <header className="bg-dark p-3">
                     <Button color="success" type="submit" onClick={this.redirectToView}>Home</Button>
                 </header>
                 <Route component={Routes} />

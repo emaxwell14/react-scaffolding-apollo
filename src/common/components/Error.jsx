@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-const Error = () => <p>Error :(</p>;
+const Error = ({ data: { error } }) => (
+    <Fragment>
+        <h3>Error Occurred</h3>
+        <p>{error.message}</p>
+    </Fragment>
+);
 
 export default Error;
