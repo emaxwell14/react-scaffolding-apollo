@@ -19,20 +19,20 @@ const RenderField = props => (
 );
 
 const RenderButtonField = ({ types, name, onClick, value }) => (
-    <div>
+    <FormGroup className="d-flex flex-column">
         <Label>{name}</Label>
         <ButtonGroup>
             {types.map(type => (
                 <Button
                     key={type}
-                    color={value === type && 'success'}
+                    color={value === type ? 'success' : 'secondary'}
                     onClick={() => onClick(type)}
                 >
                     {type}
                 </Button>
             ))}
         </ButtonGroup>
-    </div>
+    </FormGroup>
 );
 
 class EditTaskComponent extends Component {
