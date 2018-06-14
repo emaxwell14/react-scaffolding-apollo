@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 import { Button } from 'reactstrap';
 import { genericProps, taskProps } from '../../../common/propTypes';
 
@@ -9,6 +10,8 @@ const RenderField = ({ label, value }) => (
         <p>{value}</p>
     </div>
 );
+
+const formatDate = (date, format = 'DD/MM/YYYY HH:MM') => moment(date).format(format);
 
 class TaskComponent extends Component {
     render() {
@@ -21,7 +24,7 @@ class TaskComponent extends Component {
                     <RenderField label="Name" value={task.name} />
                     <RenderField label="Description" value={task.description} />
                     <RenderField label="Status" value={task.status} />
-                    <RenderField label="Created Date" value={task.createdDate} />
+                    <RenderField label="Created Date" value={formatDate(task.createdDate)} />
                 </div>
                 }
             </Fragment>

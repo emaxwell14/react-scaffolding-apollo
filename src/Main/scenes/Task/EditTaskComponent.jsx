@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import { Button, Input, FormGroup, Label } from 'reactstrap';
+import { Button, Input, FormGroup, Label, ButtonGroup } from 'reactstrap';
 import autobind from 'autobind-decorator';
 import { updateTaskProps, genericProps } from '../../../common/propTypes';
+
+const STATUS_TYPES = [
+    'pending',
+    'ongoing',
+    'completed',
+];
 
 const RenderField = props => (
     <FormGroup>
@@ -10,6 +16,23 @@ const RenderField = props => (
             {...props}
         />
     </FormGroup>
+);
+
+const RenderButtonField = ({ types, name, onClick, value }) => (
+    <div>
+        <Label>{name}</Label>
+        <ButtonGroup>
+            {types.map(type => (
+                <Button
+                    key={type}
+                    color={value === type && 'success'}
+                    onClick={() => onClick(type)}
+                >
+                    {type}
+                </Button>
+            ))}
+        </ButtonGroup>
+    </div>
 );
 
 class EditTaskComponent extends Component {
@@ -32,13 +55,13 @@ class EditTaskComponent extends Component {
     @autobind
     formSubmit(e) {
         const { mutate, match: { params: { taskId } } } = this.props;
-        const { name, description } = this.state;
+        const { name, description, status } = this.state;
         e.preventDefault();
-        mutate({ variables: { taskId, name, description } });
+        mutate({ variables: { taskId, name, description, status } });
     }
 
     render() {
-        const { name, description } = this.state;
+        const { name, description, status } = this.state;
         return (
             <form onSubmit={this.formSubmit}>
                 <RenderField
@@ -50,6 +73,12 @@ class EditTaskComponent extends Component {
                     name="description"
                     value={description}
                     onChange={this.setValue}
+                />
+                <RenderButtonField
+                    name="status"
+                    value={status}
+                    onClick={type => this.setState({ status: type })}
+                    types={STATUS_TYPES}
                 />
                 <Button color="success" type="submit">Save</Button>
             </form>
