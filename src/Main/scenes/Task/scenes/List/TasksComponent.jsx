@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { map, compose, prop } from 'ramda';
 import { Button, Card, CardBody, CardTitle, CardText } from 'reactstrap';
-import { genericProps, tasksProps } from '../../../common/propTypes';
+import { genericProps, tasksProps } from '../../../../../common/propTypes';
 
 const TaskList = tasks => <div className="mt-3">{tasks}</div>;
 

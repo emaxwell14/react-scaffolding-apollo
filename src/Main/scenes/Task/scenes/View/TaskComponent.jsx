@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import { Button } from 'reactstrap';
-import { genericProps, taskProps } from '../../../common/propTypes';
+import { genericProps, taskProps } from '../../../../../common/propTypes';
 
 const RenderField = ({ label, value }) => (
     <div className="d-flex">

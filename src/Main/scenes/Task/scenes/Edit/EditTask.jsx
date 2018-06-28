@@ -1,8 +1,8 @@
 import EditTaskComponent from './EditTaskComponent';
-import TaskQuery from '../../../common/graphql/Task/TaskQuery.graphql';
-import EditTaskMutation from '../../../common/graphql/Task/EditTaskMutation.graphql';
-import AddTaskMutation from '../../../common/graphql/Task/AddTaskMutation.graphql';
-import composeWithLoaderAndError from '../../../common/components/composeWithLoaderAndError';
+import TaskQuery from '../../../../../common/graphql/Task/TaskQuery.graphql';
+import EditTaskMutation from '../../../../../common/graphql/Task/EditTaskMutation.graphql';
+import AddTaskMutation from '../../../../../common/graphql/Task/AddTaskMutation.graphql';
+import composeWithLoaderAndError from '../../../../../common/components/composeWithLoaderAndError';
 
 export default composeWithLoaderAndError([
     {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Input, FormGroup, Label, ButtonGroup } from 'reactstrap';
 import autobind from 'autobind-decorator';
-import { updateTaskProps, genericProps } from '../../../common/propTypes';
+import { updateTaskProps, genericProps } from '../../../../../common/propTypes';
 
 // TODO remove
 const USER_ID = 'dXNlcjo1YjM0ZDU5NjMzZTI0YjM4MjAyZTZkMTg=';
