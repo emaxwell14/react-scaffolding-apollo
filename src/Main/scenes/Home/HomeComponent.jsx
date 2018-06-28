@@ -43,8 +43,14 @@ class HomeComponent extends Component {
         client.query({
             query,
             variables: { userName, password },
-        }).then(() => push('/tasks/'))
-            .catch(error => this.setState({ error: error.message }));
+        }).then(() => {
+            sessionStorage.setItem('USER_VALID', 'true'); // eslint-disable-line no-undef
+            push('/tasks/');
+        })
+            .catch((error) => {
+                sessionStorage.removeItem('USER_VALID'); // eslint-disable-line no-undef
+                this.setState({ error: error.message });
+            });
     }
 
     render() {
