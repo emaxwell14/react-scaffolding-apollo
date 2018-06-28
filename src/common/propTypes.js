@@ -7,7 +7,7 @@ const genericProps = shape({
 });
 
 const taskProps = shape({
-    _id: string.isRequired,
+    id: string.isRequired,
     name: string.isRequired,
     description: string,
     createdDate: object.isRequired,
@@ -22,7 +22,8 @@ const updateTaskProps = shape({
             taskId: string,
         }),
     }),
-    updateTask: func,
+    editTask: func,
+    addTask: func,
 });
 
 export {

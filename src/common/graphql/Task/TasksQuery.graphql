@@ -1,7 +1,21 @@
 query {
     tasks{
-        _id
-        name
-        description
+        edges {
+            cursor
+            node {
+                id
+                name
+                description
+                createdDate
+                status
+                userId
+            }
+        }
+        pageInfo {
+            startCursor
+            hasNextPage
+            hasPreviousPage
+            endCursor
+        }
     }
 }
