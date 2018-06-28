@@ -3,6 +3,9 @@ import { Button, Input, FormGroup, Label, ButtonGroup } from 'reactstrap';
 import autobind from 'autobind-decorator';
 import { updateTaskProps, genericProps } from '../../../common/propTypes';
 
+// TODO remove
+const USER_ID = 'dXNlcjo1YjM0ZDU5NjMzZTI0YjM4MjAyZTZkMTg=';
+
 const STATUS_TYPES = [
     'pending',
     'ongoing',
@@ -34,8 +37,6 @@ const RenderButtonField = ({ types, name, onClick, value }) => (
         </ButtonGroup>
     </FormGroup>
 );
-// TODO remove
-const USER_ID = 'dXNlcjo1YjM0ZDU5NjMzZTI0YjM4MjAyZTZkMTg=';
 
 class EditTaskComponent extends Component {
     constructor(props) {

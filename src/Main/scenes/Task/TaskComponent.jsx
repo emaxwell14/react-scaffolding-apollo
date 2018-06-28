@@ -18,7 +18,7 @@ class TaskComponent extends Component {
         const { data: { task } } = this.props;
         return (
             <Fragment>
-                <Link to={`/update/${task.id}`}><Button color="success">Edit</Button></Link>
+                <Link to={`/tasks/update/${task.id}`}><Button color="success">Edit</Button></Link>
                 {task &&
                 <div className="mt-3">
                     <RenderField label="Name" value={task.name} />

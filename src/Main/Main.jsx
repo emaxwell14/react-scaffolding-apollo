@@ -8,7 +8,7 @@ class Main extends Component {
     @autobind
     redirectToView() {
         const { history: { push } } = this.props;
-        push('/');
+        push('/tasks/');
     }
 
     render() {

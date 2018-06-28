@@ -18,7 +18,7 @@ export default composeWithLoaderAndError([
         query: EditTaskMutation,
         options: {
             options: ({ history: { push } }) => ({
-                onCompleted: ({ editTask: { task: { id } } }) => push(`/view/${id}`), // Redirect to view on edit
+                onCompleted: ({ editTask: { task: { id } } }) => push(`/tasks/view/${id}`), // Redirect to view on edit
             }),
             name: 'editTask',
         },
@@ -27,7 +27,7 @@ export default composeWithLoaderAndError([
         query: AddTaskMutation,
         options: {
             options: ({ history: { push } }) => ({
-                onCompleted: ({ addTask: { task: { id } } }) => push(`/view/${id}`), // Redirect to view on add
+                onCompleted: ({ addTask: { task: { id } } }) => push(`/tasks/view/${id}`), // Redirect to view on add
             }),
             name: 'addTask',
         },

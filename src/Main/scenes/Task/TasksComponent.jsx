@@ -9,7 +9,7 @@ const TaskList = tasks => <div className="mt-3">{tasks}</div>;
 const TaskListItem = ({ id, name, description }) => (
     <Card key={id}>
         <CardBody>
-            <CardTitle><Link to={`/view/${id}`}>{name}</Link></CardTitle>
+            <CardTitle><Link to={`/tasks/view/${id}`}>{name}</Link></CardTitle>
             <CardText>{description}</CardText>
         </CardBody>
     </Card>
@@ -20,7 +20,7 @@ class TasksComponent extends Component {
         const { data: { tasks: { edges } } } = this.props;
         return (
             <Fragment>
-                <Link to="/update/"><Button color="success">Add</Button></Link>
+                <Link to="/tasks/update/"><Button color="success">Add</Button></Link>
                 {compose(
                     TaskList,
                     map(TaskListItem),
