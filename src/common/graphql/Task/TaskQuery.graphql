@@ -1,9 +1,10 @@
-query TaskQuery($taskId: String!){
-    task(_id: $taskId){
-        _id
+query TaskQuery($taskId: ID!){
+    task(id: $taskId){
+        id
         name
         description
         createdDate
         status
+        userId
     }
 }

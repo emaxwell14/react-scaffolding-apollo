@@ -34,6 +34,8 @@ const RenderButtonField = ({ types, name, onClick, value }) => (
         </ButtonGroup>
     </FormGroup>
 );
+// TODO remove
+const USER_ID = 'dXNlcjo1YjM0ZDU5NjMzZTI0YjM4MjAyZTZkMTg=';
 
 class EditTaskComponent extends Component {
     constructor(props) {
@@ -54,10 +56,14 @@ class EditTaskComponent extends Component {
 
     @autobind
     formSubmit(e) {
-        const { mutate, match: { params: { taskId } } } = this.props;
+        const { addTask, editTask, match: { params: { taskId: id } } } = this.props;
         const { name, description, status } = this.state;
         e.preventDefault();
-        mutate({ variables: { taskId, name, description, status } });
+        if (id) {
+            editTask({ variables: { input: { id, name, description, status } } });
+        } else {
+            addTask({ variables: { input: { name, description, status, userId: USER_ID } } });
+        }
     }
 
     render() {

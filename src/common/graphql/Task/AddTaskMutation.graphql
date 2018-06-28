@@ -1,0 +1,12 @@
+mutation addTask($input: addTaskInput!) {
+    addTask(input: $input) {
+        task{
+            id
+            name
+            description
+            createdDate
+            status
+        }
+        clientMutationId
+    }
+}
