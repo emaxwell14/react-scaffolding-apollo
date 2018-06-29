@@ -1,9 +1,3 @@
 query UserLogin($userName: String!, $password: String!){
-    userLogin(userName: $userName, password: $password){
-        id
-        name
-        email
-        password
-        createdDate
-    }
+    login(userName: $userName, password: $password)
 }

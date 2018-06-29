@@ -40,15 +40,18 @@ class HomeComponent extends Component {
 
         clickEvent.preventDefault();
 
+        // TODO change to mutation
+        // TODO item should be set in middleware
         client.query({
             query,
             variables: { userName, password },
-        }).then(() => {
-            sessionStorage.setItem('USER_VALID', 'true'); // eslint-disable-line no-undef
+        }).then(({ data: { login } }) => {
+            console.log('setting response token', login);
+            sessionStorage.setItem('token', login); // eslint-disable-line no-undef
             push('/tasks/');
         })
             .catch((error) => {
-                sessionStorage.removeItem('USER_VALID'); // eslint-disable-line no-undef
+                sessionStorage.removeItem('token'); // eslint-disable-line no-undef
                 this.setState({ error: error.message });
             });
     }
@@ -66,6 +69,7 @@ class HomeComponent extends Component {
                     name="password"
                     value={password}
                     onChange={this.setValue}
+                    type="password"
                 />
                 {error && <p>{error}</p>}
                 <Button color="success" type="submit">Login</Button>
