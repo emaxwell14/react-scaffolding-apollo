@@ -57,13 +57,15 @@ class EditTaskComponent extends Component {
 
     @autobind
     formSubmit(e) {
-        const { addTask, editTask, match: { params: { taskId: id } } } = this.props;
+        const { addTask, editTask, history: { push }, match: { params: { taskId: id } } } = this.props;
         const { name, description, status } = this.state;
         e.preventDefault();
         if (id) {
-            editTask({ variables: { input: { id, name, description, status } } });
+            editTask({ variables: { input: { id, name, description, status } } })
+                .then(() => push(`/tasks/view/${id}`));
         } else {
-            addTask({ variables: { input: { name, description, status, userId: USER_ID } } });
+            addTask({ variables: { input: { name, description, status, userId: USER_ID } } })
+                .then(newTask => push(`/tasks/view/${newTask.id}`));
         }
     }
 

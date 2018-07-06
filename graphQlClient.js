@@ -41,6 +41,7 @@ const authMiddleware = new ApolloLink((operation, forward) => {
 });
 
 export default new ApolloClient({
+    connectToDevTools: process.env.NODE_ENV !== 'production',
     link: ApolloLink.from([
         onError(({ graphQLErrors, networkError }) => {
             if (graphQLErrors) {

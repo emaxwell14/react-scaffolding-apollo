@@ -1,5 +1,6 @@
 import EditTaskComponent from './EditTaskComponent';
 import TaskQuery from '../../../../../common/graphql/Task/TaskQuery.graphql';
+import TasksQuery from '../../../../../common/graphql/Task/TasksQuery.graphql';
 import EditTaskMutation from '../../../../../common/graphql/Task/EditTaskMutation.graphql';
 import AddTaskMutation from '../../../../../common/graphql/Task/AddTaskMutation.graphql';
 import composeWithLoaderAndError from '../../../../../common/components/composeWithLoaderAndError';
@@ -17,17 +18,14 @@ export default composeWithLoaderAndError([
     {
         query: EditTaskMutation,
         options: {
-            options: ({ history: { push } }) => ({
-                onCompleted: ({ editTask: { task: { id } } }) => push(`/tasks/view/${id}`), // Redirect to view on edit
-            }),
             name: 'editTask',
         },
     },
     {
         query: AddTaskMutation,
         options: {
-            options: ({ history: { push } }) => ({
-                onCompleted: ({ addTask: { task: { id } } }) => push(`/tasks/view/${id}`), // Redirect to view on add
+            options: () => ({
+                refetchQueries: [{ query: TasksQuery }],
             }),
             name: 'addTask',
         },
