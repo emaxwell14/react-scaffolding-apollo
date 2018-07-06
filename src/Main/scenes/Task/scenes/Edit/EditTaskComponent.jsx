@@ -3,7 +3,7 @@ import { Button, Input, FormGroup, Label, ButtonGroup } from 'reactstrap';
 import autobind from 'autobind-decorator';
 import { updateTaskProps, genericProps } from '../../../../../common/propTypes';
 
-// TODO remove
+// TODO get user id from state
 const USER_ID = 'dXNlcjo1YjM0ZDU5NjMzZTI0YjM4MjAyZTZkMTg=';
 
 const STATUS_TYPES = [
@@ -65,7 +65,7 @@ class EditTaskComponent extends Component {
                 .then(() => push(`/tasks/view/${id}`));
         } else {
             addTask({ variables: { input: { name, description, status, userId: USER_ID } } })
-                .then(newTask => push(`/tasks/view/${newTask.id}`));
+                .then(({ data: { addTask: { task } } }) => push(`/tasks/view/${task.id}`));
         }
     }
 
